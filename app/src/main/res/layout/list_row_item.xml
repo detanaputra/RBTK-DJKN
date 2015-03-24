@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:card_view="http://schemas.android.com/apk/res-auto"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/linearLayoutItem"
+              android:padding="@dimen/margin_small"
+              android:layout_width="match_parent"
+              android:weightSum="1"
+              android:layout_height="wrap_content">
+
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/cardviewImage"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:elevation="0dp"-->
+    <!--card_view:cardBackgroundColor="@color/primary"-->
+    <!--card_view:cardCornerRadius="@dimen/margin_medium">-->
+
+    <ImageView
+        android:layout_width="@dimen/margin_huge4"
+        android:layout_height="@dimen/margin_huge4"
+        android:scaleType="fitXY"
+        android:layout_gravity="center_vertical"
+        tools:src="@mipmap/ic_launcher"
+        android:id="@+id/imageViewItem"/>
+
+    <!--</android.support.v7.widget.CardView>-->
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardviewContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        card_view:cardBackgroundColor="@color/primary"
+        card_view:cardCornerRadius="@dimen/margin_tiny"
+        android:layout_marginLeft="@dimen/margin_small">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_tiny"
+            android:orientation="vertical">
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                tools:text="Title"
+                app:typeface="roboto_condensed_regular"
+                android:textColor="#000"
+                android:id="@+id/textViewTitleItem"/>
+
+            <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:background="@color/background"-->
+            <!--android:layout_height="1dp"/>-->
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                tools:text="Content"
+                app:typeface="roboto_condensed_light"
+                android:maxLines="2"
+                android:textColor="#000"
+                android:id="@+id/textViewContentItem"/>
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                tools:text="Updated"
+                app:typeface="roboto_condensed_light_italic"
+                android:maxLines="1"
+                android:textColor="#000"
+                android:id="@+id/textViewUpdatedItem"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

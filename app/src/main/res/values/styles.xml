@@ -1,8 +1,37 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="BaseTheme">
+
     </style>
+
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="background">@color/background</item>
+
+        <!--<item name="searchViewStyle">@style/MySearchViewStyle</item>-->
+    </style>
+
+    <!--<style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">-->
+    <!--&lt;!&ndash; Background for the search query section (e.g. EditText) &ndash;&gt;-->
+    <!--<item name="queryBackground">@color/primary</item>-->
+    <!--&lt;!&ndash; Background for the actions section (e.g. voice, submit) &ndash;&gt;-->
+    <!--<item name="submitBackground">@color/primary</item>-->
+    <!--&lt;!&ndash; Close button icon &ndash;&gt;-->
+    <!--<item name="closeIcon">@mipmap/ic_close</item>-->
+    <!--&lt;!&ndash; Search button icon &ndash;&gt;-->
+    <!--<item name="searchIcon">@mipmap/ic_action_search</item>-->
+    <!--&lt;!&ndash; Go/commit button icon &ndash;&gt;-->
+    <!--<item name="goIcon"></item>-->
+    <!--&lt;!&ndash; Voice search button icon &ndash;&gt;-->
+    <!--<item name="voiceIcon"></item>-->
+    <!-- Commit icon shown in the query suggestion row -->
+    <!--<item name="commitIcon"></item>-->
+    <!--&lt;!&ndash; Layout for query suggestion rows &ndash;&gt;-->
+    <!--<item name="suggestionRowLayout">...</item>-->
+    <!--</style>-->
 
 </resources>

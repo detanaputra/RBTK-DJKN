@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:weightSum="1"
+              android:paddingTop="32dp"
+              android:paddingBottom="32dp"
+              android:paddingLeft="8dp"
+              android:paddingRight="8dp"
+              android:fitsSystemWindows="true"
+              android:background="@color/background"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_weight="0.3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_weight="0.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/logocolor"/>
+
+        <LinearLayout
+            android:layout_weight="0.8"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="left|center_vertical"
+            android:layout_height="match_parent">
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                app:typeface="roboto_condensed_bold"
+                android:gravity="center"
+                android:text="@string/title1"
+                android:textColor="@color/primary"/>
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.TextAppearance.AppCompat.Small"
+                app:typeface="roboto_condensed_regular"
+                android:gravity="center"
+                android:text="@string/title2"
+                android:textColor="@color/primary"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="0.7"
+        android:weightSum="1"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@mipmap/ic_up"
+            android:layout_weight="0.1"/>
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:typeface="roboto_condensed_light"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/primary"
+            android:text="@string/title_action"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@mipmap/ic_down"
+            android:layout_weight="0.1"/>
+
+    </LinearLayout>
+
+</LinearLayout>
