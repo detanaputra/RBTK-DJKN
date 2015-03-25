@@ -48,7 +48,7 @@ public class ServiceDownArticle
 			{
 				Log.e("FLOW", "volleyError:" + error.toString());
 				Toast.makeText(context, "Connection Error", Toast.LENGTH_LONG).show();
-				downToDB(context, url);
+				//downToDB(context, url);
 			}
 		});
 		stringRequest.setTag(url);

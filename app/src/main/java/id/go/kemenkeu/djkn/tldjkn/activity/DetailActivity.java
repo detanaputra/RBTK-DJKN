@@ -7,7 +7,6 @@ import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 
@@ -93,11 +92,12 @@ public class DetailActivity extends ActionBarActivity
 		//		wvDetail.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 		//		wvDetail.setScrollbarFadingEnabled(false);
 
-		wvDetail.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+		//		wvDetail.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
 		wvDetail.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 
-		wvDetail.loadData(formatDetail(article.title, updated, article.body,
-				getString(R.string.urlroot) + article.slug), "text/html; charset=UTF-8", null);
+		wvDetail.loadDataWithBaseURL("file:///android_res/drawable/",
+				formatDetail(article.title, updated, article.body,
+						getString(R.string.urlroot) + article.slug), "text/html", "UTF-8", null);
 
 		initStar();
 		incViewed();
@@ -161,13 +161,20 @@ public class DetailActivity extends ActionBarActivity
 
 	private String formatDetail(String title, String updated, String content, String link)
 	{
+		//		Display display = getWindowManager().getDefaultDisplay();
+		//		int width=display.getWidth();
+		//		String head="<head><meta name=\"viewport\"\"content=\"width="+width+", initial-scale=0.65 \" /></head>";
+
 		StringBuilder htmlString = new StringBuilder();
-		htmlString.append("<center><h1>" + title + "</h1></center>");
+		//		htmlString.append(head);
+		htmlString
+				.append("<html><style>img{display: inline;height: auto;max-width: 100%;}</style>");
+		htmlString.append("<body><center><h1>" + title + "</h1></center>");
 		htmlString.append("<em>" + updated + "</em>");
 		htmlString.append("<p>" + content + "<p>");
-		htmlString.append("<center><a href='");
+		htmlString.append("<br><br><p><center><a href='");
 		htmlString.append(link);
-		htmlString.append("'><h3>" + "Lihat Versi Web" + "</h3></a></center>");
+		htmlString.append("'><img src=\"visit.png\"/>" + "</a></center></p></body></html>");
 
 		return htmlString.toString();
 	}

@@ -9,7 +9,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -219,7 +218,7 @@ public class HomeActivity extends ActionBarActivity
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data)
 	{
-		Log.d("FLOW", "onActivityResult" + requestCode + "|" + resultCode);
+		//Log.d("FLOW", "onActivityResult" + requestCode + "|" + resultCode);
 		super.onActivityResult(requestCode, resultCode, data);
 		if (requestCode == DETAIL_REQUEST)
 		{

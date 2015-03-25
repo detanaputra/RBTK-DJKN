@@ -108,7 +108,8 @@ public class SwipeRefreshListFragment extends Fragment
 
 	public void initRefreshFilter()
 	{
-		Log.d("FLOW", "initRefreshFilter" + getArguments().getInt("Menu"));
+		//Log.d("FLOW", "initRefreshFilter" + getArguments().getInt("Menu"));
+		//Log.d("FLOW->",""+new Select().from(Article.class).executeSingle());
 		if (getArguments().getInt("Menu") == 2)
 		{
 			//			Set<String> stars = Prefs.getStringSet(getString(R.string.pref_star), null);
@@ -120,7 +121,7 @@ public class SwipeRefreshListFragment extends Fragment
 			//			{
 			if (Article.isEmpty())
 			{
-				ServiceDownArticle.downToDB(getActivity(), mUrl);
+				initDownRefresh();
 			}
 			else
 			{
@@ -133,7 +134,7 @@ public class SwipeRefreshListFragment extends Fragment
 		{
 			if (Article.isEmpty())
 			{
-				ServiceDownArticle.downToDB(getActivity(), mUrl);
+				initDownRefresh();
 			}
 			else
 			{

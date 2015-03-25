@@ -3,7 +3,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="?attr/background"
+              android:background="@color/primary"
               android:orientation="vertical"
               android:weightSum="1"
               tools:context=".NavigationDrawerFragment">
@@ -15,12 +15,11 @@
         android:paddingRight="8dp"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
-        android:layout_weight="0.2"
         android:layout_width="match_parent"
-        android:background="@color/drawer"
+        android:background="@drawable/btngreen"
         android:id="@+id/LinearLayoutHome"
         android:descendantFocusability="blocksDescendants"
-        android:layout_height="0dp">
+        android:layout_height="64dp">
 
         <ImageView
             android:layout_weight="0.2"
@@ -29,7 +28,7 @@
             android:src="@mipmap/logowhite"/>
 
         <com.devspark.robototextview.widget.RobotoTextView
-            android:layout_weight="0.7"
+            android:layout_weight="0.8"
             android:layout_width="0dp"
             android:paddingLeft="32dp"
             android:gravity="left|center_vertical"
@@ -54,12 +53,11 @@
         android:paddingRight="8dp"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
-        android:layout_weight="0.2"
         android:id="@+id/LinearLayoutStar"
         android:descendantFocusability="blocksDescendants"
-        android:background="@color/drawer"
+        android:background="@drawable/btngreen"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="64dp">
 
         <ImageView
             android:layout_weight="0.2"
@@ -68,7 +66,7 @@
             android:src="@mipmap/ic_star"/>
 
         <com.devspark.robototextview.widget.RobotoTextView
-            android:layout_weight="0.7"
+            android:layout_weight="0.8"
             android:layout_width="0dp"
             android:paddingLeft="32dp"
             android:gravity="left|center_vertical"
