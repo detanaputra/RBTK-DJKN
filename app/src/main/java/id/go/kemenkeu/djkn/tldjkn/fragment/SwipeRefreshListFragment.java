@@ -101,15 +101,7 @@ public class SwipeRefreshListFragment extends Fragment
 						getResources().getDisplayMetrics()));
 		mSwipeRefreshLayout.setRefreshing(true);
 
-		if (ConnUtil.isNetConnected(getActivity()))
-		{
-			initRefreshFilter();
-		}
-		else
-		{
-			mSwipeRefreshLayout.setRefreshing(false);
-			Msg.showNoConnection(getActivity());
-		}
+		initRefreshFilter();
 	}
 
 	private void doCheckRefresh()
@@ -145,7 +137,7 @@ public class SwipeRefreshListFragment extends Fragment
 			//			{
 			if (Article.isEmpty())
 			{
-				initDownRefresh();
+				doCheckRefresh();
 			}
 			else
 			{
@@ -158,7 +150,7 @@ public class SwipeRefreshListFragment extends Fragment
 		{
 			if (Article.isEmpty())
 			{
-				initDownRefresh();
+				doCheckRefresh();
 			}
 			else
 			{
