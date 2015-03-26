@@ -36,6 +36,8 @@ import id.go.kemenkeu.djkn.tldjkn.activity.HomeActivity;
 import id.go.kemenkeu.djkn.tldjkn.adapter.FeedsAdapter;
 import id.go.kemenkeu.djkn.tldjkn.model.Article;
 import id.go.kemenkeu.djkn.tldjkn.service.ServiceDownArticle;
+import id.go.kemenkeu.djkn.tldjkn.util.ConnUtil;
+import id.go.kemenkeu.djkn.tldjkn.util.Msg;
 
 public class SwipeRefreshListFragment extends Fragment
 {
@@ -89,7 +91,8 @@ public class SwipeRefreshListFragment extends Fragment
 			@Override
 			public void onRefresh()
 			{
-				initDownRefresh();//initRefreshFilter();//initiateRefresh(mUrl);
+				doCheckRefresh();
+				//initDownRefresh();//initRefreshFilter();//initiateRefresh(mUrl);
 			}
 		});
 
@@ -99,6 +102,19 @@ public class SwipeRefreshListFragment extends Fragment
 		mSwipeRefreshLayout.setRefreshing(true);
 
 		initRefreshFilter();
+	}
+
+	private void doCheckRefresh()
+	{
+		if (ConnUtil.isNetConnected(getActivity()))
+		{
+			initDownRefresh();
+		}
+		else
+		{
+			mSwipeRefreshLayout.setRefreshing(false);
+			Msg.showNoConnection(getActivity());
+		}
 	}
 
 	private void initDownRefresh()

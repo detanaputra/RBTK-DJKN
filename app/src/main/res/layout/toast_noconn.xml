@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/toast_root"
+              android:background="#444444"
+              android:orientation="horizontal"
+              android:padding="@dimen/margin_small"
+              android:weightSum="1"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:text="Tidak Ada Koneksi, Periksa Koneksi Anda"
+        android:textColor="@color/primary"
+        app:typeface="roboto_condensed_regular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
