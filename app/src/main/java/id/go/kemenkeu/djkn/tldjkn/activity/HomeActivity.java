@@ -1,6 +1,9 @@
 package id.go.kemenkeu.djkn.tldjkn.activity;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -18,6 +21,7 @@ import id.go.kemenkeu.djkn.tldjkn.adapter.FeedsAdapter;
 import id.go.kemenkeu.djkn.tldjkn.fragment.NavigationDrawerFragment;
 import id.go.kemenkeu.djkn.tldjkn.fragment.SwipeRefreshListFragment;
 import id.go.kemenkeu.djkn.tldjkn.model.Article;
+import id.go.kemenkeu.djkn.tldjkn.service.ArticleStartReceiver;
 import id.go.kemenkeu.djkn.tldjkn.service.ServiceDownArticle;
 
 
@@ -113,6 +117,7 @@ public class HomeActivity extends ActionBarActivity
 
 		//onNavigationDrawerItemSelected(1);
 		startActivity(new Intent(this, SplashActivity.class));
+		startDownService();
 	}
 
 	private void showSearch(String query)
@@ -254,5 +259,15 @@ public class HomeActivity extends ActionBarActivity
 		{
 			fragment.refreshData(Article.getAll());
 		}
+	}
+
+	private void startDownService()
+	{
+		AlarmManager service = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+		Intent i = new Intent(this, ArticleStartReceiver.class);
+		PendingIntent pending = PendingIntent
+				.getBroadcast(this, 0, i, PendingIntent.FLAG_CANCEL_CURRENT);
+		service.setInexactRepeating(AlarmManager.ELAPSED_REALTIME, AlarmManager.INTERVAL_HOUR,
+				AlarmManager.INTERVAL_HOUR, pending);
 	}
 }

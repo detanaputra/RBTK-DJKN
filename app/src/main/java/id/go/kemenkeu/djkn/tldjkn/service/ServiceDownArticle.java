@@ -82,7 +82,10 @@ public class ServiceDownArticle
 				if (data != null)
 				{
 					saveToDB(context, data);
-					((IDownArticle) context).refreshData();
+					if (IDownArticle.class.isInstance(context))
+					{
+						((IDownArticle) context).refreshData();
+					}
 				}
 				else
 				{
