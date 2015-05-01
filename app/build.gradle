@@ -11,10 +11,24 @@ android {
 		versionCode 4
 		versionName "1.0"
 	}
-	buildTypes {
+	signingConfigs {
 		release {
-			minifyEnabled false
+			keyAlias 'tldjknkemenkeu'
+			keyPassword 'tldjkn'
+			storePassword 'tldjkn'
+			storeFile file("keys/sign.jks")
+		}
+	}
+	buildTypes {
+		debug {
+			applicationIdSuffix '.debug'
+			versionNameSuffix '-debug'
+		}
+		release {
+			minifyEnabled true
+			shrinkResources true
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+			signingConfig signingConfigs.release
 		}
 	}
 }
