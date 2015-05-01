@@ -15,6 +15,7 @@
         android:text="Tidak Ada Koneksi, Periksa Koneksi Anda"
         android:textColor="@color/primary"
         app:typeface="roboto_condensed_regular"
+        style="@style/Base.TextAppearance.AppCompat.Medium"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

@@ -13,8 +13,8 @@
         android:weightSum="1"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:layout_width="match_parent"
         android:background="@drawable/btngreen"
         android:id="@+id/LinearLayoutHome"
@@ -22,7 +22,7 @@
         android:layout_height="64dp">
 
         <ImageView
-            android:layout_weight="0.2"
+            android:layout_weight="0.1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:src="@mipmap/logowhite"/>
@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             app:typeface="roboto_condensed_regular"
             android:textColor="@color/primary"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
             android:text="@string/title_section1"/>
 
     </LinearLayout>
@@ -51,8 +51,8 @@
         android:weightSum="1"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:id="@+id/LinearLayoutStar"
         android:descendantFocusability="blocksDescendants"
         android:background="@drawable/btngreen"
@@ -60,7 +60,7 @@
         android:layout_height="64dp">
 
         <ImageView
-            android:layout_weight="0.2"
+            android:layout_weight="0.1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:src="@mipmap/ic_star"/>
@@ -73,7 +73,7 @@
             android:layout_height="match_parent"
             app:typeface="roboto_condensed_regular"
             android:textColor="@color/primary"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
             android:text="@string/title_section2"/>
 
     </LinearLayout>

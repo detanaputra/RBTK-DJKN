@@ -45,7 +45,7 @@
             <com.devspark.robototextview.widget.RobotoTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
                 tools:text="Title"
                 app:typeface="roboto_condensed_regular"
                 android:textColor="#000"
@@ -60,7 +60,7 @@
             <com.devspark.robototextview.widget.RobotoTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                style="@style/Base.TextAppearance.AppCompat.Small"
                 tools:text="Content"
                 app:typeface="roboto_condensed_light"
                 android:maxLines="2"
@@ -70,7 +70,7 @@
             <com.devspark.robototextview.widget.RobotoTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                style="@style/Base.TextAppearance.AppCompat.Small"
                 tools:text="Updated"
                 app:typeface="roboto_condensed_light_italic"
                 android:maxLines="1"

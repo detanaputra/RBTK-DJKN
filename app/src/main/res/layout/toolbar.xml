@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="8dp"
         android:gravity="left|center_vertical"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        style="@style/Base.TextAppearance.AppCompat.Medium"
         app:typeface="roboto_condensed_regular"
         tools:text="Title"
         android:textColor="@color/drawer"
