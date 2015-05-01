@@ -23,4 +23,7 @@
 -keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
 #]
 
+#for SearchView : [
+-keep class android.support.v7.widget.SearchView { *; }
+#]
 
