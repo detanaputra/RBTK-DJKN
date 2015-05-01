@@ -16,15 +16,19 @@
 #   public *;
 #}
 
+#for robototextview : [
+#-dontwarn com.devspark.robototextview.widget.**
+#]
+
+#for SearchView : [
+-keep class android.support.v7.widget.SearchView { *; }
+#]
+
 #for prevent lost name : [
 -keepclasseswithmembernames class * {*;}
 -keepparameternames
 -renamesourcefileattribute SourceFile
 -keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
-#]
-
-#for SearchView : [
--keep class android.support.v7.widget.SearchView { *; }
 #]
 
 #for google play services : [
@@ -46,3 +50,16 @@
 }
 #]
 
+#for glide : [
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+    **[] $VALUES;
+    public *;
+}
+#]
+
+#for volley : [
+#-keep class com.android.volley.** { *; }
+#-keep interface com.android.volley.** { *; }
+#-dontwarn com.android.volley.**
+#]

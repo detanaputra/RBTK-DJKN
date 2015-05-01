@@ -113,7 +113,7 @@ public class SwipeRefreshListFragment extends Fragment
 		else
 		{
 			mSwipeRefreshLayout.setRefreshing(false);
-			Msg.showNoConnection(getActivity());
+			Msg.showToast(getActivity());
 		}
 	}
 

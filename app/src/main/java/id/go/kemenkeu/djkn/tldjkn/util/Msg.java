@@ -13,10 +13,10 @@ import id.go.kemenkeu.djkn.tldjkn.R;
  */
 public class Msg
 {
-	public static void showNoConnection(Activity activity)
+	public static void showToast(Activity activity)
 	{
-		View layout = activity.getLayoutInflater()
-				.inflate(R.layout.toast_noconn, (ViewGroup) activity.findViewById(R.id.toast_root));
+		View layout = activity.getLayoutInflater().inflate(R.layout.toast_content,
+				(ViewGroup) activity.findViewById(R.id.toast_root));
 
 		Toast toast = new Toast(activity);
 		toast.setGravity(Gravity.BOTTOM | Gravity.FILL_HORIZONTAL, 0, 0);
