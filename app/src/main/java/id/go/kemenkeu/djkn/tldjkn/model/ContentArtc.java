@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by Hendra on 21/03/2015.
  */
-public class ContentData
+public class ContentArtc
 {
 	public ArrayList<Article> article;
 }

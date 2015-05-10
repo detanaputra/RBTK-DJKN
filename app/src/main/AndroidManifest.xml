@@ -22,7 +22,7 @@
             android:value="tldjkn.db"/>
         <meta-data
             android:name="AA_DB_VERSION"
-            android:value="1"/>
+            android:value="2"/>
         <meta-data
             android:name="AA_MODELS"
             android:value="id.go.kemenkeu.djkn.tldjkn.model.Article"/>

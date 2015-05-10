@@ -14,7 +14,7 @@ public class ArticleService extends Service
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId)
 	{
-		ServiceDownArticle.downToDB(this, getString(R.string.urldata));
+		ServiceDownArticle.downToDB(this, getString(R.string.urlall));
 		//Toast.makeText(this, "Service Article Start", Toast.LENGTH_LONG).show();
 		return Service.START_NOT_STICKY;
 	}

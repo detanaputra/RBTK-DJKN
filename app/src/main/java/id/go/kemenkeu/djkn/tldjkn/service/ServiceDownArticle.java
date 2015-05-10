@@ -39,7 +39,7 @@ public class ServiceDownArticle
 					@Override
 					public void onResponse(String response)
 					{
-						onDownComplete(context, response);
+						onDownComplete(context, url, response);
 					}
 				}, new Response.ErrorListener()
 		{
@@ -60,7 +60,7 @@ public class ServiceDownArticle
 		VolleySingleton.getInstance(context).getRequestQueue().cancelAll(url);
 	}
 
-	private static void onDownComplete(final Context context, String result)
+	private static void onDownComplete(final Context context, final String url, String result)
 	{
 		new AsyncTask<String, Void, ArrayList>()
 		{
@@ -68,12 +68,23 @@ public class ServiceDownArticle
 			@Override
 			protected ArrayList doInBackground(String... results)
 			{
-				return parseResult(results[0]);
+				return parseResult(url, results[0]);
 			}
 
-			private ArrayList parseResult(String result)
+			private ArrayList parseResult(String url, String result)
 			{
-				return ResultParser.getResult(result).contents.article;
+				if (url.endsWith("news"))
+				{
+					return ResultParser.getResultNews(result).contents.news;
+				}
+				else if (url.endsWith("article"))
+				{
+					return ResultParser.getResultArtc(result).contents.article;
+				}
+				else
+				{
+					return ResultParser.getResultAll(result).contents.all;
+				}
 			}
 
 			@Override

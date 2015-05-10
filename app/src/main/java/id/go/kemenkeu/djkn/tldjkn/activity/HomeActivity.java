@@ -79,7 +79,7 @@ public class HomeActivity extends ActionBarActivity
 
 		MenuItem searchItem = toolbar.getMenu().findItem(R.id.action_search);
 		final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-		searchView.setQueryHint("judul article");
+		searchView.setQueryHint("judul");
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
 			@Override
@@ -141,7 +141,18 @@ public class HomeActivity extends ActionBarActivity
 		SwipeRefreshListFragment fragment = new SwipeRefreshListFragment();
 		Bundle bundle = new Bundle();
 		bundle.putInt("Menu", position);
-		bundle.putString("Url", getString(R.string.urldata));
+		if (position == 41)
+		{
+			bundle.putString("Url", getString(R.string.urlnews));
+		}
+		else if (position == 42)
+		{
+			bundle.putString("Url", getString(R.string.urlarticles));
+		}
+		else
+		{
+			bundle.putString("Url", getString(R.string.urlall));
+		}
 		fragment.setArguments(bundle);
 
 		FragmentManager fragmentManager = getSupportFragmentManager();
@@ -157,6 +168,15 @@ public class HomeActivity extends ActionBarActivity
 				break;
 			case 2:
 				mTitle = getString(R.string.title_section2);
+				break;
+			case 41:
+				mTitle = getString(R.string.title_section41);
+				break;
+			case 42:
+				mTitle = getString(R.string.title_section42);
+				break;
+			case 5:
+				mTitle = getString(R.string.title_section5);
 				break;
 		}
 
@@ -254,6 +274,18 @@ public class HomeActivity extends ActionBarActivity
 		if (mTitle.equals(getString(R.string.title_section2)))
 		{
 			fragment.refreshData(Article.getAllStar());
+		}
+		else if (mTitle.equals(getString(R.string.title_section41)))
+		{
+			fragment.refreshData(Article.getAllNews());
+		}
+		else if (mTitle.equals(getString(R.string.title_section42)))
+		{
+			fragment.refreshData(Article.getAllArtc());
+		}
+		else if (mTitle.equals(getString(R.string.title_section5)))
+		{
+			fragment.refreshData(Article.getAllArch());
 		}
 		else
 		{

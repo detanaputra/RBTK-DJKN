@@ -97,7 +97,7 @@ public class DetailActivity extends ActionBarActivity
 
 		wvDetail.loadDataWithBaseURL(null,//file:///android_res/drawable/",
 				formatDetail(article.title, updated, article.body,
-						getString(R.string.urlroot) + article.slug), "text/html", "UTF-8", null);
+						getString(R.string.urlslug) + article.slug), "text/html", "UTF-8", null);
 
 		initStar();
 		incViewed();
@@ -189,7 +189,7 @@ public class DetailActivity extends ActionBarActivity
 
 		Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
 		intent.putExtra(Intent.EXTRA_TEXT,
-				article.title + "\n" + getString(R.string.urlroot) + article.slug);
+				article.title + "\n" + getString(R.string.urlslug) + article.slug);
 
 		startActivity(Intent.createChooser(intent, "Berbagi Ke... "));
 	}

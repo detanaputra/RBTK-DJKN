@@ -2,7 +2,9 @@ package id.go.kemenkeu.djkn.tldjkn.util;
 
 import com.google.gson.Gson;
 
-import id.go.kemenkeu.djkn.tldjkn.model.ResultData;
+import id.go.kemenkeu.djkn.tldjkn.model.ResultAll;
+import id.go.kemenkeu.djkn.tldjkn.model.ResultArtc;
+import id.go.kemenkeu.djkn.tldjkn.model.ResultNews;
 
 /**
  * Created by Hendra on 21/03/2015.
@@ -11,20 +13,30 @@ public class ResultParser
 {
 	//	public static final int MAXCONTENT = 80;
 
-	public static ResultData getResult(String result)
+	public static ResultAll getResultAll(String result)
 	{
-		return new Gson().fromJson(result, ResultData.class);
+		return new Gson().fromJson(result, ResultAll.class);
 	}
 
-	//	public static ResultData getFormattedResult(String result)
+	public static ResultNews getResultNews(String result)
+	{
+		return new Gson().fromJson(result, ResultNews.class);
+	}
+
+	public static ResultArtc getResultArtc(String result)
+	{
+		return new Gson().fromJson(result, ResultArtc.class);
+	}
+
+	//	public static ResultAll getFormattedResult(String result)
 	//	{
-	//		ResultData rData = getResult(result);
+	//		ResultAll rData = getResult(result);
 	//		format(rData);
 	//
 	//		return rData;
 	//	}
 
-	//	private static void format(ResultData rData)
+	//	private static void format(ResultAll rData)
 	//	{
 	//		for(Article article : rData.contents.article)
 	//		{

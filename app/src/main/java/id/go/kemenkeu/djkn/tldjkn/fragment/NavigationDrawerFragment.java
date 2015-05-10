@@ -72,6 +72,33 @@ public class NavigationDrawerFragment extends Fragment
 				selectItem(2);
 			}
 		});
+		LinearLayout llNews = (LinearLayout) mDrawer.findViewById(R.id.LinearLayoutNews);
+		llNews.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View view)
+			{
+				selectItem(41);
+			}
+		});
+		LinearLayout llArtc = (LinearLayout) mDrawer.findViewById(R.id.LinearLayoutArticles);
+		llArtc.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View view)
+			{
+				selectItem(42);
+			}
+		});
+		LinearLayout llArch = (LinearLayout) mDrawer.findViewById(R.id.LinearLayoutArchieves);
+		llArch.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View view)
+			{
+				selectItem(5);
+			}
+		});
 
 		return mDrawer;
 	}

@@ -37,6 +37,8 @@ public class Article extends Model implements Serializable
 	public long viewed;
 	@Column(name = "Star")
 	public boolean star;
+	@Column(name = "Readed")
+	public boolean readed;
 
 	public static boolean isEmpty()
 	{
@@ -46,6 +48,18 @@ public class Article extends Model implements Serializable
 	public static List<Article> getAll()
 	{
 		return new Select().from(Article.class).orderBy("IdArticle DESC").execute();
+	}
+
+	public static List<Article> getAllNews()
+	{
+		return new Select().from(Article.class).where("Category = ?", "news")
+				.orderBy("IdArticle DESC").execute();
+	}
+
+	public static List<Article> getAllArtc()
+	{
+		return new Select().from(Article.class).where("Category = ?", "article")
+				.orderBy("IdArticle DESC").execute();
 	}
 
 	public static List<Article> getAllSearch(String search)
@@ -58,6 +72,12 @@ public class Article extends Model implements Serializable
 	{
 		return new Select().from(Article.class).where("Star = ?", true)
 				.where("Title LIKE '%" + search + "%'").orderBy("IdArticle DESC").execute();
+	}
+
+	public static List<Article> getAllArch()
+	{
+		return new Select().from(Article.class).where("Readed = ?", true).orderBy("IdArticle DESC")
+				.execute();
 	}
 
 	public static List<Article> getAllId(String id)

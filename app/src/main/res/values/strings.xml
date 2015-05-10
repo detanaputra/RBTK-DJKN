@@ -1,15 +1,24 @@
 <resources>
     <string name="app_name">Transformasi Kelembagaan DJKN</string>
-    <string name="urldata">http://www.djkn.kemenkeu.go.id/transform/api/contents/article?pretty=true</string>
-    <string name="urlroot">http://www.djkn.kemenkeu.go.id/transform/</string>
+
+    <string name="urlall">http://www.djkn.kemenkeu.go.id/transform/api/contents</string>
+    <string name="urlnews">http://www.djkn.kemenkeu.go.id/transform/api/contents/news</string>
+    <string name="urlarticles">http://www.djkn.kemenkeu.go.id/transform/api/contents/article</string>
+    <string name="urlthumb">http://www.djkn.kemenkeu.go.id/transform/</string>
+    <string name="urlslug">http://www.djkn.kemenkeu.go.id/transform/api/content/</string>
+    <string name="urlcounter">http://www.djkn.kemenkeu.go.id/transform/api/content_counter/</string>
 
     <string name="title1">TRANSFORMASI KELEMBAGAAN</string>
     <string name="title2">Direktorat Jenderal Kekayaan Negara</string>
     <string name="title_action">SWIPE</string>
 
     <string name="title_section1">Home</string>
-    <string name="title_section2">Starred Articles</string>
+    <string name="title_section2">Bookmark</string>
     <string name="title_section3">Logout</string>
+    <string name="title_section4">Category</string>
+    <string name="title_section41">News</string>
+    <string name="title_section42">Articles</string>
+    <string name="title_section5">Archives</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

@@ -114,7 +114,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder>
 		if (article.thumbnail != null)
 		{
 			//viewHolder.getmImage().setVisibility(View.VISIBLE);
-			Glide.with(mContext).load(mContext.getString(R.string.urlroot) + article.thumbnail)
+			Glide.with(mContext).load(mContext.getString(R.string.urlthumb) + article.thumbnail)
 					//.placeholder(R.drawable.logocolor)
 					//.thumbnail(0.1f)
 					//.centerCrop()
