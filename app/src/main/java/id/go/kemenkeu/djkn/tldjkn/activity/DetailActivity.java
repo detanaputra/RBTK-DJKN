@@ -102,6 +102,7 @@ public class DetailActivity extends ActionBarActivity implements ServiceSendCoun
 
 		initStar();
 		incViewed();
+		setReaded();
 	}
 
 	private void initStar()
@@ -219,4 +220,15 @@ public class DetailActivity extends ActionBarActivity implements ServiceSendCoun
 		article.viewed++;
 		article.save();
 	}
+
+	private void setReaded()
+	{
+		Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
+		if (!article.readed)
+		{
+			article.readed = true;
+			article.save();
+		}
+	}
+
 }
