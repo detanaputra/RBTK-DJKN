@@ -129,11 +129,11 @@ public class ServiceDownArticle
 		String title;
 		if (type == 1)
 		{
-			title = "NEW ARTICLE";
+			title = "NEW " + article.category.toUpperCase();
 		}
 		else
 		{
-			title = "UPDATE ARTICLE";
+			title = "UPDATE " + article.category.toUpperCase();
 		}
 		Notification notif = NotifUtil
 				.createNotif(context, linkIntent, R.mipmap.ic_launcher, true, null, title,
