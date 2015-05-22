@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import id.go.kemenkeu.djkn.tldjkn.R;
 
@@ -20,7 +21,7 @@ public class NavigationDrawerFragment extends Fragment
 	private NavigationDrawerCallbacks mCallbacks;
 
 	private DrawerLayout mDrawerLayout;
-	private LinearLayout mDrawer;
+	private ScrollView mDrawer;
 	private View mFragmentContainerView;
 
 	private int mCurrentSelectedPosition = 1;
@@ -52,7 +53,7 @@ public class NavigationDrawerFragment extends Fragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState)
 	{
-		mDrawer = (LinearLayout) inflater
+		mDrawer = (ScrollView) inflater
 				.inflate(R.layout.fragment_navigation_drawer, container, false);
 		LinearLayout llHome = (LinearLayout) mDrawer.findViewById(R.id.LinearLayoutHome);
 		llHome.setOnClickListener(new View.OnClickListener()

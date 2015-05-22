@@ -42,7 +42,7 @@
     <!--android:id="@+id/textViewUpdated"/>-->
 
     <WebView
-        android:background="@color/primary"
+        android:background="@mipmap/background"
         android:layout_marginTop="@dimen/margin_tiny"
         android:paddingTop="@dimen/margin_medium"
         android:paddingBottom="@dimen/margin_medium"

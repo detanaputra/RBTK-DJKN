@@ -146,6 +146,39 @@ public class SwipeRefreshListFragment extends Fragment
 			//initiateRefresh(mUrl);
 			//			}
 		}
+		else if (getArguments().getInt("Menu") == 41)
+		{
+			if (Article.isEmpty())
+			{
+				doCheckRefresh();
+			}
+			else
+			{
+				refreshData(Article.getAllNews());
+			}
+		}
+		else if (getArguments().getInt("Menu") == 42)
+		{
+			if (Article.isEmpty())
+			{
+				doCheckRefresh();
+			}
+			else
+			{
+				refreshData(Article.getAllArtc());
+			}
+		}
+		else if (getArguments().getInt("Menu") == 5)
+		{
+			if (Article.isEmpty())
+			{
+				doCheckRefresh();
+			}
+			else
+			{
+				refreshData(Article.getAllArch());
+			}
+		}
 		else
 		{
 			if (Article.isEmpty())
