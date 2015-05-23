@@ -1,6 +1,7 @@
 package id.go.kemenkeu.djkn.tldjkn.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.ShareActionProvider;
@@ -95,10 +96,13 @@ public class DetailActivity extends ActionBarActivity implements ServiceSendCoun
 
 		//		wvDetail.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
 		wvDetail.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-
+		wvDetail.setBackgroundColor(0);
 		wvDetail.loadDataWithBaseURL(null,//file:///android_res/drawable/",
 				formatDetail(article.title, updated, article.body,
 						getString(R.string.urlslug) + article.slug), "text/html", "UTF-8", null);
+
+		wvDetail.setBackgroundColor(Color.argb(128, 255, 255, 255));
+		wvDetail.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
 
 		initStar();
 		incViewed();
@@ -169,8 +173,11 @@ public class DetailActivity extends ActionBarActivity implements ServiceSendCoun
 
 		StringBuilder htmlString = new StringBuilder();
 		//		htmlString.append(head);
-		htmlString
-				.append("<html><style>img{display: inline;height: auto;max-width: 100%;}</style>");
+		htmlString.append("<html><style>img{display: inline;height: auto;max-width: 100%;}"
+				+ "body,html{background-color:transparent;}"
+				+ "h2{background-color:rgba(255,255,255,0.5)}"
+				+ "em{background-color:rgba(255,255,255,0.5)}"
+				+ "p{background-color:rgba(255,255,255,0.5)}</style>");
 		htmlString.append("<body><center><h2>" + title + "</h2></center>");
 		htmlString.append("<em>" + updated + "</em>");
 		htmlString.append("<p>" + content + "<p>");
