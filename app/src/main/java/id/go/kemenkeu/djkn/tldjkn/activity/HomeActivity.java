@@ -289,7 +289,7 @@ public class HomeActivity extends ActionBarActivity
 		}
 		else
 		{
-			fragment.refreshData(Article.getAll());
+			fragment.refreshData(Article.getAllUnread());
 		}
 	}
 

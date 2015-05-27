@@ -187,7 +187,7 @@ public class SwipeRefreshListFragment extends Fragment
 			}
 			else
 			{
-				refreshData(Article.getAll());
+				refreshData(Article.getAllUnread());
 			}
 			//initiateRefresh(mUrl);
 		}

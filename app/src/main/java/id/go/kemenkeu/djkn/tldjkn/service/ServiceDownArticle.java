@@ -108,8 +108,10 @@ public class ServiceDownArticle
 
 	private static void saveToDB(Context context, ArrayList<Article> data)
 	{
-		for (Article article : data)
+		//for (Article article : data)
+		for (int i = 0; i < data.size(); i++)
 		{
+			Article article = data.get(i);
 			int type = isNew(article);
 			if (type == 1 || type == 2) // new or update, 0 = old
 			{
@@ -136,7 +138,8 @@ public class ServiceDownArticle
 			title = "UPDATE " + article.category.toUpperCase();
 		}
 		Notification notif = NotifUtil
-				.createNotif(context, linkIntent, R.mipmap.ic_launcher, true, null, title,
+				.createNotif(context, linkIntent, NotifUtil.getIdNotif(), 0, R.mipmap.ic_launcher,
+						true, null, title,
 						article.title, null, null, -1, Color.GREEN, 500, 500, pattern, alarmSound);
 
 		NotifUtil.sendNotif(context, NotifUtil.getIdNotif(), notif);

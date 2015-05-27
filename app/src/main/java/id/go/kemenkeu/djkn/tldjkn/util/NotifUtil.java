@@ -17,6 +17,7 @@ public class NotifUtil
 	private static int sIdNotif;
 
 	public static NotificationCompat.Builder createNotifBuilder(Context context, Intent intentLink,
+																int requestCode, int intentFlags,
 																int idSmallIcon, boolean autoCancel,
 																Bitmap largeIcon, String titleText,
 																String contentText, String subText,
@@ -27,7 +28,8 @@ public class NotifUtil
 	{
 		//		Intent intent = new Intent(Intent.ACTION_VIEW,
 		//				Uri.parse("http://developer.android.com/reference/android/app/Notification.html"));
-		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intentLink, 0);
+		PendingIntent pendingIntent = PendingIntent
+				.getActivity(context, requestCode, intentLink, intentFlags);
 
 
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
@@ -105,6 +107,7 @@ public class NotifUtil
 	}
 
 	public static NotificationCompat.Builder createNotifBuilder(Context context, Intent intentLink,
+																int requestCode, int intentFlags,
 																int idSmallIcon, boolean autoCancel,
 																Bitmap largeIcon, String titleText,
 																String contentText, String subText,
@@ -120,7 +123,8 @@ public class NotifUtil
 		//		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intentLink, 0);
 
 
-		NotificationCompat.Builder builder = createNotifBuilder(context, intentLink, idSmallIcon,
+		NotificationCompat.Builder builder = createNotifBuilder(context, intentLink, requestCode,
+				intentFlags, idSmallIcon,
 				autoCancel, largeIcon, titleText, contentText, subText, infoText, number,
 				lightColor, lightOnMs, lightOffMs, pattern, alarmSound);
 
@@ -129,14 +133,16 @@ public class NotifUtil
 		return builder;
 	}
 
-	public static Notification createNotif(Context context, Intent intentLink, int idSmallIcon,
+	public static Notification createNotif(Context context, Intent intentLink, int requestCode,
+										   int intentFlags, int idSmallIcon,
 										   boolean autoCancel, Bitmap largeIcon, String titleText,
 										   String contentText, String subText, String infoText,
 										   int number, int lightColor, int lightOnMs,
 										   int lightOffMs, long[] pattern, Uri alarmSound)
 	{
 
-		NotificationCompat.Builder builder = createNotifBuilder(context, intentLink, idSmallIcon,
+		NotificationCompat.Builder builder = createNotifBuilder(context, intentLink, requestCode,
+				intentFlags, idSmallIcon,
 				autoCancel, largeIcon, titleText, contentText, subText, infoText, number,
 				lightColor, lightOnMs, lightOffMs, pattern, alarmSound);
 

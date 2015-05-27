@@ -17,8 +17,8 @@ import id.go.kemenkeu.djkn.tldjkn.service.ServiceSendCounter;
 
 public class DetailActivity extends ActionBarActivity implements ServiceSendCounter.ISendCounter
 {
+	Article mArticle;
 	private ShareActionProvider mShareActionProvider;
-
 	private boolean isStarChanged = false;
 
 	@Override
@@ -70,49 +70,57 @@ public class DetailActivity extends ActionBarActivity implements ServiceSendCoun
 			}
 		});
 
+		initUIData();
+	}
 
-		Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
+	void initUIData()
+	{
+		mArticle = (Article) getIntent().getSerializableExtra("FeedsDetail");
 
-		//		long day = TimeUtil.getCurrentDayDiff(article.post_date);
-		//		long hour = TimeUtil.getCurrentHourDiff(article.post_date);
-		//		long minute = TimeUtil.getCurrentMinuteDiff(article.post_date);
-		//		long second = TimeUtil.getCurrentSecoundDiff(article.post_date);
+		if (mArticle != null)
+		{
+			//		long day = TimeUtil.getCurrentDayDiff(article.post_date);
+			//		long hour = TimeUtil.getCurrentHourDiff(article.post_date);
+			//		long minute = TimeUtil.getCurrentMinuteDiff(article.post_date);
+			//		long second = TimeUtil.getCurrentSecoundDiff(article.post_date);
 
-		String updated = "<p>telah dilihat " + article.viewed + " kali<br>" + article.post_date
-				+ " oleh " + article.author + "</p>"
-				//				+ " / " + (day > 0 ? day + " hari"
-				//				: hour > 0 ? hour + " jam" : minute > 0 ? minute + " menit" : second + " detik")
-				//				+" yang lalu"
-				;
+			String updated = "<p>telah dilihat " + mArticle.viewed + " kali<br>"
+					+ mArticle.post_date + " oleh " + mArticle.author + "</p>"
+					//				+ " / " + (day > 0 ? day + " hari"
+					//				: hour > 0 ? hour + " jam" : minute > 0 ? minute + " menit" : second + " detik")
+					//				+" yang lalu"
+					;
 
-		WebView wvDetail = (WebView) findViewById(R.id.webViewDetail);
+			WebView wvDetail = (WebView) findViewById(R.id.webViewDetail);
 
-		//		wvDetail.setInitialScale(1);
-		//		wvDetail.getSettings().setJavaScriptEnabled(true);
-		//		wvDetail.getSettings().setLoadWithOverviewMode(true);
-		//		wvDetail.getSettings().setUseWideViewPort(true);
-		//		wvDetail.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-		//		wvDetail.setScrollbarFadingEnabled(false);
+			//		wvDetail.setInitialScale(1);
+			//		wvDetail.getSettings().setJavaScriptEnabled(true);
+			//		wvDetail.getSettings().setLoadWithOverviewMode(true);
+			//		wvDetail.getSettings().setUseWideViewPort(true);
+			//		wvDetail.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+			//		wvDetail.setScrollbarFadingEnabled(false);
 
-		//		wvDetail.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-		wvDetail.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-		wvDetail.setBackgroundColor(0);
-		wvDetail.loadDataWithBaseURL(null,//file:///android_res/drawable/",
-				formatDetail(article.title, updated, article.body,
-						getString(R.string.urlslug) + article.slug), "text/html", "UTF-8", null);
+			//		wvDetail.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+			wvDetail.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+			wvDetail.setBackgroundColor(0);
+			wvDetail.loadDataWithBaseURL(null,//file:///android_res/drawable/",
+					formatDetail(mArticle.title, updated, mArticle.body,
+							getString(R.string.urlslug) + mArticle.slug), "text/html", "UTF-8",
+					null);
 
-		wvDetail.setBackgroundColor(Color.argb(128, 255, 255, 255));
-		wvDetail.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
+			wvDetail.setBackgroundColor(Color.argb(128, 255, 255, 255));
+			wvDetail.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
 
-		initStar();
-		incViewed();
-		setReaded();
+			initStar();
+			incViewed();
+			setReaded();
+		}
 	}
 
 	private void initStar()
 	{
-		Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
-		setStar(article.star);
+		//Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
+		setStar(mArticle.star);
 		//		Set<String> stars = Prefs.getStringSet(getString(R.string.pref_star), null);
 		//		if(stars==null)
 		//		{
@@ -147,10 +155,10 @@ public class DetailActivity extends ActionBarActivity implements ServiceSendCoun
 		//		{
 		//			stars = new HashSet<>();
 		//		}
-		Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
-		article.star = !article.star;
-		article.save();
-		setStar(article.star);
+		//Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
+		mArticle.star = !mArticle.star;
+		mArticle.save();
+		setStar(mArticle.star);
 		//		if(!stars.contains(article.id))
 		//		{
 		//			stars.add(article.id);
@@ -197,9 +205,9 @@ public class DetailActivity extends ActionBarActivity implements ServiceSendCoun
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("text/plain");
 
-		Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
+		//Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
 		intent.putExtra(Intent.EXTRA_TEXT,
-				article.title + "\n" + getString(R.string.urlslug) + article.slug);
+				mArticle.title + "\n" + getString(R.string.urlslug) + mArticle.slug);
 
 		startActivity(Intent.createChooser(intent, "Berbagi Ke... "));
 	}
@@ -216,25 +224,25 @@ public class DetailActivity extends ActionBarActivity implements ServiceSendCoun
 
 	private void incViewed()
 	{
-		Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
-		ServiceSendCounter.sendToDB(this, getString(R.string.urlcounter) + article.id);
+		//Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
+		ServiceSendCounter.sendToDB(this, getString(R.string.urlcounter) + mArticle.id);
 	}
 
 	@Override
 	public void incViewedData()
 	{
-		Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
-		article.viewed++;
-		article.save();
+		//Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
+		mArticle.viewed++;
+		mArticle.save();
 	}
 
 	private void setReaded()
 	{
-		Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
-		if (!article.readed)
+		//Article article = (Article) getIntent().getSerializableExtra("FeedsDetail");
+		if (!mArticle.readed)
 		{
-			article.readed = true;
-			article.save();
+			mArticle.readed = true;
+			mArticle.save();
 		}
 	}
 

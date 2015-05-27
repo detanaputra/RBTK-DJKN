@@ -80,6 +80,12 @@ public class Article extends Model implements Serializable
 				.execute();
 	}
 
+	public static List<Article> getAllUnread()
+	{
+		return new Select().from(Article.class).where("Readed = ?", false).orderBy("IdArticle DESC")
+				.execute();
+	}
+
 	public static List<Article> getAllId(String id)
 	{
 		return new Select().from(Article.class).where("IdArticle = ?", id).execute();
