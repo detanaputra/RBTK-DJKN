@@ -47,42 +47,42 @@ public class Article extends Model implements Serializable
 
 	public static List<Article> getAll()
 	{
-		return new Select().from(Article.class).orderBy("IdArticle DESC").execute();
+		return new Select().from(Article.class).orderBy("PostDate DESC").execute();
 	}
 
 	public static List<Article> getAllNews()
 	{
 		return new Select().from(Article.class).where("Category = ?", "news")
-				.orderBy("IdArticle DESC").execute();
+				.orderBy("PostDate DESC").execute();
 	}
 
 	public static List<Article> getAllArtc()
 	{
 		return new Select().from(Article.class).where("Category = ?", "article")
-				.orderBy("IdArticle DESC").execute();
+				.orderBy("PostDate DESC").execute();
 	}
 
 	public static List<Article> getAllSearch(String search)
 	{
 		return new Select().from(Article.class).where("Title LIKE '%" + search + "%'")
-				.orderBy("IdArticle DESC").execute();
+				.orderBy("PostDate DESC").execute();
 	}
 
 	public static List<Article> getAllStarSearch(String search)
 	{
 		return new Select().from(Article.class).where("Star = ?", true)
-				.where("Title LIKE '%" + search + "%'").orderBy("IdArticle DESC").execute();
+				.where("Title LIKE '%" + search + "%'").orderBy("PostDate DESC").execute();
 	}
 
 	public static List<Article> getAllArch()
 	{
-		return new Select().from(Article.class).where("Readed = ?", true).orderBy("IdArticle DESC")
+		return new Select().from(Article.class).where("Readed = ?", true).orderBy("PostDate DESC")
 				.execute();
 	}
 
 	public static List<Article> getAllUnread()
 	{
-		return new Select().from(Article.class).where("Readed = ?", false).orderBy("IdArticle DESC")
+		return new Select().from(Article.class).where("Readed = ?", false).orderBy("PostDate DESC")
 				.execute();
 	}
 
@@ -93,7 +93,7 @@ public class Article extends Model implements Serializable
 
 	public static List<Article> getAllStar()
 	{
-		return new Select().from(Article.class).where("Star = ?", true).orderBy("IdArticle DESC")
+		return new Select().from(Article.class).where("Star = ?", true).orderBy("PostDate DESC")
 				.execute();
 	}
 
