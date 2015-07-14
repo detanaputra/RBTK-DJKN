@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Transformasi Kelembagaan DJKN</string>
 
-    <string name="urlall">http://www.djkn.kemenkeu.go.id/transform/api/contents</string>
-    <string name="urlnews">http://www.djkn.kemenkeu.go.id/transform/api/contents/news</string>
-    <string name="urlarticles">http://www.djkn.kemenkeu.go.id/transform/api/contents/article</string>
-    <string name="urlthumb">http://www.djkn.kemenkeu.go.id/transform/</string>
+    <string name="urlall">http://www.djkn.kemenkeu.go.id/transformasi/api/contents</string>
+    <string name="urlnews">http://www.djkn.kemenkeu.go.id/transformasi/api/contents/news</string>
+    <string name="urlarticles">http://www.djkn.kemenkeu.go.id/transformasi/api/contents/article</string>
+    <string name="urlthumb">http://www.djkn.kemenkeu.go.id/transformasi/</string>
     <string name="urlslug">http://www.djkn.kemenkeu.go.id/transformasi/</string>
-    <string name="urlcounter">http://www.djkn.kemenkeu.go.id/transform/api/content_counter/</string>
+    <string name="urlcounter">http://www.djkn.kemenkeu.go.id/transformasi/api/content_counter/</string>
 
     <string name="title1">TRANSFORMASI KELEMBAGAAN</string>
     <string name="title2">Direktorat Jenderal Kekayaan Negara</string>

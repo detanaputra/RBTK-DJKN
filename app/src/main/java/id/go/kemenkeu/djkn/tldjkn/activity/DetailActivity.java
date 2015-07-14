@@ -14,6 +14,7 @@ import android.widget.TextView;
 import id.go.kemenkeu.djkn.tldjkn.R;
 import id.go.kemenkeu.djkn.tldjkn.model.Article;
 import id.go.kemenkeu.djkn.tldjkn.service.ServiceSendCounter;
+import id.go.kemenkeu.djkn.tldjkn.util.TimeUtil;
 
 public class DetailActivity extends ActionBarActivity implements ServiceSendCounter.ISendCounter
 {
@@ -85,7 +86,8 @@ public class DetailActivity extends ActionBarActivity implements ServiceSendCoun
 			//		long second = TimeUtil.getCurrentSecoundDiff(article.post_date);
 
 			String updated = "<p>telah dilihat " + mArticle.viewed + " kali<br>"
-					+ mArticle.post_date + " oleh " + mArticle.author + "</p>"
+					+ TimeUtil.getFormattedDateTimeID(TimeUtil.getDateTime(mArticle.post_date))
+					+ " oleh " + mArticle.author + "</p>"
 					//				+ " / " + (day > 0 ? day + " hari"
 					//				: hour > 0 ? hour + " jam" : minute > 0 ? minute + " menit" : second + " detik")
 					//				+" yang lalu"

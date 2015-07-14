@@ -3,6 +3,8 @@ package id.go.kemenkeu.djkn.tldjkn.util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -58,5 +60,11 @@ public class TimeUtil
 		long diff = TimeUnit.SECONDS.convert(diffMillis, TimeUnit.MILLISECONDS);
 
 		return diff;
+	}
+
+	public static String getFormattedDateTimeID(long dateTime)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("d MMM yyyy - k:m", new Locale("in", "ID"));
+		return sdf.format(new Date(dateTime));
 	}
 }
