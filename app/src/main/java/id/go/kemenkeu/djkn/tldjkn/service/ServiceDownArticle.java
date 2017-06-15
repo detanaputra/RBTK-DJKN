@@ -27,6 +27,7 @@ import id.go.kemenkeu.djkn.tldjkn.util.VolleySingleton;
 
 /**
  * Created by Hendra on 24/03/2015.
+ * Updated and Maintained by Deta PMO DJKN 15/06/2017
  */
 public class ServiceDownArticle
 {

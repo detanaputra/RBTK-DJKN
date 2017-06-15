@@ -8,8 +8,9 @@
     <string name="urlslug">http://www.djkn.kemenkeu.go.id/transformasi/</string>
     <string name="urlcounter">http://www.djkn.kemenkeu.go.id/transformasi/api/content_counter/</string>
 
-    <string name="title1">TRANSFORMASI KELEMBAGAAN</string>
+    <string name="title1">REFORMASI BIROKRASI DAN TRANSFORMASI KELEMBAGAAN</string>
     <string name="title2">Direktorat Jenderal Kekayaan Negara</string>
+    <string name="version">Direktorat Jenderal Kekayaan Negara</string>
     <string name="title_action">SWIPE</string>
 
     <string name="title_section1">Home</string>

@@ -13,45 +13,54 @@
               android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_weight="0.3"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:weightSum="1"
-        android:gravity="center_vertical">
+        android:layout_weight="0.3"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
 
         <ImageView
-            android:layout_weight="0.2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@mipmap/logocolor"/>
+            android:layout_weight="0.2"
+            android:src="@mipmap/logocolor" />
 
         <LinearLayout
-            android:layout_weight="0.8"
-            android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_marginLeft="4dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="@dimen/margin_medium"
+            android:layout_weight="0.75"
             android:gravity="left|center_vertical"
-            android:layout_height="match_parent">
+            android:orientation="vertical">
 
             <com.devspark.robototextview.widget.RobotoTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 style="@style/Base.TextAppearance.AppCompat.Medium"
-                app:typeface="roboto_condensed_bold"
-                android:gravity="center"
-                android:text="@string/title1"
-                android:textColor="@color/primary"/>
-
-            <com.devspark.robototextview.widget.RobotoTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/title1"
+                android:textColor="@color/primary"
+                app:typeface="roboto_condensed_bold" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
                 style="@style/Base.TextAppearance.AppCompat.Small"
-                app:typeface="roboto_condensed_regular"
-                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
                 android:text="@string/title2"
-                android:textColor="@color/primary"/>
+                android:textColor="@color/primary"
+                app:typeface="roboto_condensed_regular" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                style="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/version"
+                android:textColor="@color/primary"
+                app:typeface="roboto_condensed_regular" />
 
         </LinearLayout>
 
