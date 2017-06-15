@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Transformasi Kelembagaan DJKN</string>
+    <string name="app_name">Reformasi Birokrasi dan Transformasi Kelembagaan DJKN</string>
 
     <string name="urlall">http://www.djkn.kemenkeu.go.id/transformasi/api/contents</string>
     <string name="urlnews">http://www.djkn.kemenkeu.go.id/transformasi/api/contents/news</string>
@@ -10,7 +10,7 @@
 
     <string name="title1">REFORMASI BIROKRASI DAN TRANSFORMASI KELEMBAGAAN</string>
     <string name="title2">Direktorat Jenderal Kekayaan Negara</string>
-    <string name="version">Direktorat Jenderal Kekayaan Negara</string>
+    <string name="version">versi 1.2.1</string>
     <string name="title_action">SWIPE</string>
 
     <string name="title_section1">Home</string>
